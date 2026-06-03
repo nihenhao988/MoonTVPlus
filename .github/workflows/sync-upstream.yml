@@ -1,4 +1,6 @@
 name: Sync Upstream
+permissions:
+  contents: write   # 必须加这一行，否则无法 push
 
 on:
   schedule:
