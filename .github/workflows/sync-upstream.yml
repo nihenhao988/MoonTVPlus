@@ -1,11 +1,12 @@
 name: Sync Upstream
+
 permissions:
-  contents: write   # 必须加这一行，否则无法 push
+  contents: write
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # 每 6 小时自动同步
-  workflow_dispatch:        # 允许你手动触发
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
 
 jobs:
   sync:
@@ -19,6 +20,7 @@ jobs:
 
       - name: Add Upstream
         run: |
+          git remote remove upstream || true
           git remote add upstream https://github.com/MoonTVPlus/MoonTVPlus.git
           git fetch upstream
 
