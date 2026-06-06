@@ -4,8 +4,8 @@ permissions:
   contents: write
 
 on:
-  schedule:
-    - cron: "0 */6 * * *"   # 每 6 小时自动同步
+  # schedule:
+    # - cron: "0 */6 * * *"   # 每 6 小时自动同步
   workflow_dispatch:
 
 jobs:
